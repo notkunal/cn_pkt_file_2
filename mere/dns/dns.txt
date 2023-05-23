@@ -1,0 +1,23 @@
+server
+dns server : 192.168.10.1
+desktop -> ip 
+192.168.10.1
+dns server : 192.168.10.1
+
+services
+dns sevice on
+ name : notkunal.com
+192.168.10.0
+add
+
+pc0
+192.168.10.2
+dns :192.168.10.1
+
+pc1
+192.168.10.3
+dns :192.168.10.1
+
+pc2
+192.168.10.4
+dns :192.168.10.1

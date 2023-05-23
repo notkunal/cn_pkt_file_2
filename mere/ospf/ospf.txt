@@ -1,0 +1,38 @@
+pc0
+ip : 192.168.1.2
+dg : 192.168.1.1
+pc1
+ip : 192.168.2.2
+dg : 192.168.2.1
+
+then router0 ->
+ip 192.168.1.1
+click on
+then router1 ->
+ip 192.168.2.1
+click on
+
+router0 <10.0.0.0> router1
+ router0 -> seriol 2.0
+clock 64000
+ip 10.10.0.2
+on
+
+ router1 -> seriol 2.0
+clock not set
+ip 10.10.0.3
+on
+
+router 0 cli
+conf t
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 10.0.0.0. 0.255.255.255 area 0
+
+router 1 cli
+conf t
+router ospf 1
+network 192.168.2.0 0.0.0.255 area 0
+network 10.0.0.0. 0.255.255.255 area 0
+
+
